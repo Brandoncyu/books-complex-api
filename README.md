@@ -1,7 +1,5 @@
 # Technical Library Complex API
 
-'try'
-
 You will be tasked with building an API from scratch. This API should:
 
 - Follow RESTful patterns
