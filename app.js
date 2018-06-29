@@ -12,8 +12,8 @@ app.use(bodyParser.json())
 const bookRoutes = require('./src/routes/books')
 app.use('/books', bookRoutes)
 
-// const authorRoutes = require('./src/routes/authors')
-// app.use('/author', authorRoutes)
+const authorRoutes = require('./src/routes/authors')
+app.use('/writers', authorRoutes)
 
 app.use((req, res, next)=>{
   const status = 404

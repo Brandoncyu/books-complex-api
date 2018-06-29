@@ -53,11 +53,14 @@ function create(input){
       response = {error}
       return response
     }
+    let newArray =[]
     let splitAuthor = writers.split('#')
     nameFirst = splitAuthor[0]
     nameLast = splitAuthor[1]
     writers = {nameFirst, nameLast}
     writers.id = shortId()
+    newArray.push(writers)
+    writers = newArray
   }
   let newBook = { bookTITLE, description, writers }
 
@@ -73,7 +76,6 @@ function create(input){
 function update(input, id){
   let data = db.find(element => element.BookID === id)
   let index = db.indexOf(data)
-  console.log(data)
 
   let response
   let error
@@ -109,11 +111,14 @@ function update(input, id){
       response = {error}
       return response
     }
+    let newArray =[]
     let splitAuthor = writers.split('#')
     nameFirst = splitAuthor[0]
     nameLast = splitAuthor[1]
     writers = {nameFirst, nameLast}
     writers.id = shortId()
+    newArray.push(writers)
+    writers = newArray
   }
 
   db[index].bookTITLE = bookTITLE
