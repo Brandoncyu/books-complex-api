@@ -1,7 +1,7 @@
 const express = require('express')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
-const uuid = require('uuid/v4')
+const shortId = require('shortid')
 
 const port = process.env.PORT || 5000
 
@@ -12,8 +12,8 @@ app.use(bodyParser.json())
 const bookRoutes = require('./src/routes/books')
 app.use('/books', bookRoutes)
 
-const authorRoutes = require('./src/routes/authors')
-app.use('/author', authorRoutes)
+// const authorRoutes = require('./src/routes/authors')
+// app.use('/author', authorRoutes)
 
 app.use((req, res, next)=>{
   const status = 404
