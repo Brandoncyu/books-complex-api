@@ -44,6 +44,7 @@ function create(input){
   let bookTITLE = 'None Yet'
   let description = ''
   let writers = input.writers
+  console.log(writers)
   if (writers.includes(',')){
     writersArray = writers.split(',')
     let newArray = []

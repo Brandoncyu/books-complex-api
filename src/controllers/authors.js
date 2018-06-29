@@ -26,7 +26,7 @@ function update(req, res, next){
   let getOne = models.getOne(id)
   if (getOne.error) return next({status: 404, message: 'Id Not Found, Fool'})
 
-  let data = models.update(req.body.name, id)
+  let data = models.update(req.body.writers, id)
   console.log(data)
   if (data.error){
     if(data.error === 1) return next({status: 404, message: `please add a '#' between the first and last name of the author`})
