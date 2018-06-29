@@ -14,11 +14,7 @@ function getOne(req,res, next){
 
 function create(req, res, next){
   let data = models.create(req.body)
-  if(data.error){
-    if (data.error == 1) return next({status: 404, message: `please add a '#' between the first and last name of the author`})
-
-    if (data.error == 2) return next({status: 404, message: 'you need a title, description, and writers'})
-  }
+  if(data.error) return next({status: 404, message: 'you need a title, description, firstname and lastname'})
 
   res.status(201).send({data})
 }
@@ -30,11 +26,7 @@ function update(req, res, next){
 
   let data = models.update(req.body, id)
 
-  if(data.error){
-    if (data.error == 1) return next({status: 404, message: `please add a '#' between the first and last name of the author`})
-
-    if (data.error == 2) return next({status: 404, message: 'you need a title, description, and writers'})
-  }
+  if(data.error) return next({status: 404, message: 'you need a title, description, and writers'})
 
   res.send({data})
 }
