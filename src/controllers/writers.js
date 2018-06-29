@@ -3,7 +3,6 @@ const books = require('../models/books')
 
 function getAll(req, res, next){
   let id = req.params.id
-  console.log(id)
   let getOne = books.getOne(id)
   if (getOne.error) return next({status: 404, message: 'Book Id Not Found, Fool'})
 
